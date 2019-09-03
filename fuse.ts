@@ -1,6 +1,6 @@
 import { fusebox, sparky, pluginCustomTransform  } from "fuse-box";
-
 import styledTransform from "typescript-plugin-styled-components" 
+
 
 class Context {
   runServer: boolean;
@@ -39,3 +39,19 @@ task("dist", async (ctx) => {
   const fuse = ctx.getConfig();
   await fuse.runProd({ uglify: false });
 });
+
+
+type ScTransformOptions = {
+  getDisplayName(filename: string, bindingName: string | undefined): string | undefined;
+  //Identifiers of (for example)`styled` function. mostly pointless
+  identifiers: {
+    styled?: string[]; 
+    attrs?: string[];
+    keyframes?: string[];
+    css?: string[];
+    createGlobalStyle?: string[];
+};
+  ssr: boolean;
+  displayName: boolean;
+  minify: boolean;
+}

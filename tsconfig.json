@@ -17,11 +17,16 @@
         "noImplicitUseStrict": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "plugins":[
+            {"name":"typescript-styled-plugin"},
+            {"name":"typescript-eslint-language-service"}
+        ]
         // "plugins": [
+        // hope this eventually works as good as the tslint one ;\
         //     {"name":"typescript-eslint-language-service"}
         // ]
     },
-    "include": ["src"],
+    "include": ["src/**/*.tsx","src/**/*.ts","src/**/*.js","src/**/*.jsx"],
     "exclude": ["fuse.ts"]
 }

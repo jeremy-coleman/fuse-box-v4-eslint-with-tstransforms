@@ -6,10 +6,22 @@ import { JsxTester } from './Tester'
 
 import styled from 'styled-components'
 
+let x: number = 'notanumber'
+
 let StyledTester = styled.div`
-    background-color: 'red';
+    background: skyblue;
     border: 5px solid green;
 `
+
+import{IReExportedType, TypesTester} from './type-exports'
+
+type P = IReExportedType & React.HTMLProps<any>
+
+let MyPointlessWrapper = (props: P) => {
+    return <TypesTester {...props}>
+        re-exporting types works
+    </TypesTester>
+}
 
 class App extends Component {
     render() {
@@ -26,6 +38,7 @@ class App extends Component {
                 </p>
                 <JsxTester/>
                 <StyledTester>styled transform works(see dist/_somehash_app.js)</StyledTester>
+                <MyPointlessWrapper bg='green'/>
             </div>
         )
     }
