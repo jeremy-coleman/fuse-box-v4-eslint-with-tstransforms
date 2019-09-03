@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "removeComments": true,
+        "importHelpers": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noEmitHelpers": true,
+        "jsx": "react",
+        "outDir": "build/",
+        "moduleResolution": "node",
+        "isolatedModules": false,
+        "allowJs": true,
+        "checkJs": true,
+        "noImplicitAny": false,
+        "noImplicitUseStrict": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "resolveJsonModule": true
+        // "plugins": [
+        //     {"name":"typescript-eslint-language-service"}
+        // ]
+    },
+    "include": ["src"],
+    "exclude": ["fuse.ts"]
+}

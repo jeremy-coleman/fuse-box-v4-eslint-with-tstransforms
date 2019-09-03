@@ -1,0 +1,47 @@
+{
+  "name": "react-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sucrase-node fuse",
+    "dist": "sucrase-node fuse dist",
+    "preview": "ts-node -T fuse preview",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint":"eslint  --fix src/**/*{.ts,.tsx,.js,.jsx}",
+    "lint:debug":"eslint --debug"
+  },
+  "author": "",
+  "license": "ISC",
+  "prettier":{
+      "trailingComma": "none",
+      "tabWidth": 2,
+      "semi": false,
+      "singleQuote": true,
+      "printWidth": 120
+  },
+  "eslintIgnore": ["fuse.ts"],
+  "dependencies": {
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "tslib": "1.10.0",
+    "styled-components":"4.3.2"
+  },
+  "devDependencies": {
+    "typescript-eslint-language-service": "1.4.0",
+    "typescript-plugin-styled-components":"1.4.3",
+    "@types/react": "16.9.2",
+    "@types/react-dom": "16.9.0",
+    "fuse-box": "4.0.0-next.95",
+    "terser": "4.2.1",
+    "typescript": "3.6.2",
+    "@typescript-eslint/eslint-plugin": "2.1.0",
+    "@typescript-eslint/parser": "2.1.0",
+    "@typescript-eslint/typescript-estree": "2.1.0",
+    "eslint": "6.3.0",
+    "eslint-config-prettier": "6.1.0",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "2.0.1",
+    "prettier": "1.18.2"
+  }
+}
