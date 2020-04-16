@@ -1,3 +1,4 @@
+import path from 'path'
 import { fusebox, sparky, pluginCustomTransform  } from "fuse-box";
 import styledTransform from "typescript-plugin-styled-components" 
 
@@ -8,19 +9,24 @@ class Context {
     fusebox({
       target: "browser",
       entry: "src/index.tsx",
+      //hmr: { plugin: 'src/hmr.ts' },
       webIndex: {
         template: "src/index.html"
       },
-      plugins:[
-        pluginCustomTransform({
-          before: [styledTransform()]
-        })
-      ],
+      // cache: {
+      //   enabled: false,
+      //   root: path.join(__dirname, '.cache'),
+      // },
+      // plugins:[
+      //   pluginCustomTransform({
+      //     before: [styledTransform()]
+      //   })
+      // ],
       devServer: this.runServer
     });
 }
 
-const { task } = sparky(Context);
+const { task , rm } = sparky(Context);
 
 task("default", async (ctx) => {
   ctx.runServer = true;
@@ -37,7 +43,11 @@ task("preview", async (ctx) => {
 task("dist", async (ctx) => {
   ctx.runServer = false;
   const fuse = ctx.getConfig();
-  await fuse.runProd({ uglify: false });
+  await fuse.runProd({ uglify: true });
+});
+
+task("clean", async () => {
+  rm("dist")
 });
 
 

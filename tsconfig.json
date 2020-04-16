@@ -18,6 +18,7 @@
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
         "resolveJsonModule": true,
+        "baseUrl": "src",
         "plugins":[
             {"name":"typescript-styled-plugin"},
             {"name":"typescript-eslint-language-service"}

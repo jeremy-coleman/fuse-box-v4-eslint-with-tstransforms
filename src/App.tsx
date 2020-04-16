@@ -2,7 +2,7 @@ import * as React from "react"
 import { Component } from 'react'
 import './App.css'
 import * as logo from './logo.svg'
-import { JsxTester } from './Tester'
+import { JsxTester } from '@scoped/Tester'
 
 import styled from 'styled-components'
 
@@ -15,6 +15,7 @@ let StyledTester = styled.div`
 
 import{IReExportedType, TypesTester} from './type-exports'
 
+
 type P = IReExportedType & React.HTMLProps<any>
 
 let MyPointlessWrapper = (props: P) => {
@@ -22,6 +23,7 @@ let MyPointlessWrapper = (props: P) => {
         re-exporting types works
     </TypesTester>
 }
+
 
 class App extends Component {
     render() {
